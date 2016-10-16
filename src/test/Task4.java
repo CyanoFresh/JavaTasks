@@ -3,16 +3,38 @@ package test;
 public class Task4 {
 
 	public static void main(String[] args) {
-		int num = 18;
+		int[] array = { 3, 4, 5, 56, 12, 45 };
 		
-		for (int i = 2; i <= num/i; i++) {
-			if (num % i == 0 ) {
-				System.out.println(num + " - Простое число");
-				return;
+		int min = (int)Double.POSITIVE_INFINITY;
+		int max = (int)Double.NEGATIVE_INFINITY;
+		
+		int minIndex = 0;
+		int maxIndex = 0;
+		
+		for (int i = 0; i < array.length; i++) {
+			int value = array[i];
+			
+			if (value < min) {
+				min = value;
+				minIndex = i;
 			}
 		}
 		
-		System.out.println(num + " - Не Простое число");
+		for (int i = 0; i < array.length; i++) {
+			int value = array[i];
+			
+			if (value > max) {
+				max = value;
+				maxIndex = i;
+			}
+		}
+		
+		array[minIndex] = max;
+		array[maxIndex] = min;
+		
+		for (int value : array) {
+			System.out.println(value + " ");
+		}
 	}
 
 }
