@@ -10,7 +10,15 @@ public class Task2 {
 			sum += value;
 		}
 		
-		System.out.println(sum / array.length);
+		int ser = sum / array.length;
+		
+		System.out.println(ser);
+		
+		for (int value : array) {
+			if (value > ser) {
+				System.out.print(value + " ");
+			}
+		}
 	}
 
 }
